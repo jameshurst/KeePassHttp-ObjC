@@ -11,6 +11,7 @@
 #import "KPHResponse.h"
 
 #import "GCDWebServer.h"
+#import "GCDWebServerPrivate.h"
 #import "GCDWebServerDataRequest.h"
 #import "GCDWebServerDataResponse.h"
 
@@ -41,7 +42,7 @@ static const NSUInteger kKPHDefaultPort = 19455;
 {
     if (self = [super init])
     {
-        [GCDWebServer setLogLevel:kGCDWebServerLogLevel_Error];
+        [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
         
         _handlers = @{
                       kKPHRequestTestAssociate: [KPHTestAssociateHandler new],
